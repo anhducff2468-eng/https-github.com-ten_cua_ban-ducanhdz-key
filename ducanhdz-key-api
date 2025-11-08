@@ -1,0 +1,7 @@
+export default function handler(req, res) {
+  const date = new Date().toISOString().split("T")[0];
+  const random = Math.random().toString(36).substring(2, 8).toUpperCase();
+  const key = `#DUCANHDZ${date.replace(/-/g, "")}${random}`;
+  
+  res.status(200).json({ date, key });
+}
